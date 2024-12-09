@@ -2,7 +2,9 @@
 
 BIND provides a useful tool for analyzing missing values(NAs) in a biological perspective.
 
-It consists of 3 part, BIND_stat, BIND_classification, and BIND_ppi. The first one is BIND_stat, which works as a general statistical analysis of missing values in a proteomic dataset.
+It consists of 3 part, BIND_stat(A), BIND_classification(B), and BIND_ppi(C). The first one is BIND_stat, which works as a general statistical analysis of missing values in a proteomic dataset.
+
+<img src="https://github.com/guowh1999/BIND/blob/main/Figure1.jpg" width="210px">
 
 ## BIND_stat
 
