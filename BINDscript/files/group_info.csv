@@ -1,0 +1,61 @@
+﻿Name,Tissue
+X786O,Renal
+A498,Renal
+A549,Non-Small Cell Lung
+ACHN,Renal
+BT549,Breast
+CAKI1,Renal
+CCRFCEM,Leukemia
+COLO205,Colon
+DU145,Prostate
+EKVX,Non-Small Cell Lung
+HCC2998,Colon
+HCT116,Colon
+HCT15,Colon
+HL60,Leukemia
+HOP62,Non-Small Cell Lung
+HOP92,Non-Small Cell Lung
+HS578T,Breast
+HT29,Colon
+IGROV1,Ovarian
+K562,Leukemia
+KM12,Colon
+LOXIMVI,Melanoma
+M14,Melanoma
+MALME3M,Melanoma
+MCF7,Breast
+MDAMB231,Breast
+MDAMB435,Melanoma
+MDAMB468,Breast
+MOLT4,Leukemia
+NCIADRES,Ovarian
+NCIH226,Non-Small Cell Lung
+NCIH23,Non-Small Cell Lung
+NCIH322M,Non-Small Cell Lung
+NCIH460,Non-Small Cell Lung
+NCIH522,Non-Small Cell Lung
+OVCAR3,Ovarian
+OVCAR4,Ovarian
+OVCAR5,Ovarian
+OVCAR8,Ovarian
+PC3,Prostate
+RPMI8226,Leukemia
+RXF393,Renal
+SF268,CNS
+SF295,CNS
+SF539,CNS
+SKMEL2,Melanoma
+SKMEL28,Melanoma
+SKMEL5,Melanoma
+SKOV3,Ovarian
+SN12C,Renal
+SNB19,CNS
+SNB75,CNS
+SR,Leukemia
+SW620,Colon
+T47D,Breast
+TK10,Renal
+U031,Renal
+U251,CNS
+UACC257,Melanoma
+UACC62,Melanoma
