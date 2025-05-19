@@ -1,37 +1,18 @@
-# BIND
+# Biological informative NA deconvolution (BIND)
 
-BIND provides a useful tool for analyzing missing values(NAs) in a biological perspective.
+## Brief introduction
 
-It consists of 3 part, BIND_stat(A), BIND_classification(B), and BIND_ppi(C). The first one is BIND_stat, which works as a general statistical analysis of missing values in a proteomic dataset.
+BIND is a bioinformatics tool for comprehensive analysis of missing value patterns in large-scale proteomics data.
 
-<img src="https://github.com/guowh1999/BIND/blob/main/Figure1.jpg" width="210px">
+Although a variety of data imputation methods are available for imputing large-scale proteomics data containing missing values into complete data matrices, such manipulations typically ignore the biological significance of the missing values themselves. For example, missing values may arise from low or no protein expression, which BIND refers to as **“biological” NA**, or from technical problems, which BIND refers to as **“technical” NA**. BIND is designed precisely as a tool developed to derive biological insights from missing value patterns.
 
-## BIND_stat
+## BIND data analysis process
 
-The input data are 2: expression matrix and group information.
-There are 4 parameters,
+BIND analyzed the data from three perspectives:
 
----
-**data_mtx_dir**: the expression data matrix file;
+- Characterization of missing value patterns in the dataset. This part analyzes the pattern of missing values in the dataset and the differences of missing values in different subgroups through various visualization methods, such as heatmaps, pie charts, etc.
 
-**grp_info_dir**: the group information file;
+- Classification of NAs. BIND differentiates “biological” from “technical” NAs by integrating features of neighboring samples. This deconvolves the NA natures and helps interpret the biological significance.
 
-**grp_name**: the group type you tend to analysis, it must be one of the column names of grp_info file;
+- NA-weighted protein interaction analysis. BIND generates weighting factors based on biological NAs to improve the abundance covariance analysis for more sensitive and precise mapping of protein complexes 
 
-**output_dir**: analysis result output position;
-
----
-
-A running example:
-
-```
-Rscript BIND_stat.R --data_mtx_dir "E:/webserver/data.csv" --grp_info_dir "E:/webserver/group_info.csv" --grp_name "Tissue" --output_dir "E:/webserver/stat"
-```
-
-Output file:
-
-**binary_mtx.csv**: A matrix after transfering the data marix with 1/0;
-
-**overall_stat.csv**: overall NA ratio (missing value number / total sample number);
-
-**group_stat.csv**: NA ratio by groups.
