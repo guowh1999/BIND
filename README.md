@@ -19,13 +19,13 @@ BIND analyzed the data from three perspectives:
 
 - NA-weighted protein interaction analysis. BIND generates weighting factors based on biological NAs to improve the abundance covariance analysis for more sensitive and precise mapping of protein complexes 
 
-<img src="Figure1.jpg" width="600" height="800">
+<img src="Figure1.jpg" width="600">
 
 ## Web server
 
 We provide a website version of the BIND data analysis tool, which can be accessed by entering http://bind.fengslab.com/. The web page provides a detailed [user's tutorial](./Webserver).
 
-<img src="./Figs/Figure1_new_gra_ab.jpg" width="600" height="400">
+<img src="./Figs/figure7_new.jpg" width="800">
 
 ## Sorce code and command line operation tool
 
