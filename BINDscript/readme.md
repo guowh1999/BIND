@@ -24,6 +24,7 @@ There are 4 parameters,
 
 ---
 
+Please enter the path to this file on the command line and pass in the parameters to run the script.
 A running example:
 
 ```
