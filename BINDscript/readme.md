@@ -4,6 +4,7 @@ BIND provides a useful tool for analyzing missing values(NAs) in a biological pe
 
 It consists of 3 part, BIND_stat(A), BIND_classification(B), and BIND_ppi(C). This folder contains the command line run scripts for the three parts of BIND, and the source code is available to the user. In addition, this document describes how to run BIND from the command line.
 
+The file folder holds the example data and the results of running the example data. In addition, the format requirements for the input file are provided at the end of this document.
 
 ## BIND_stat 📊
 
@@ -26,7 +27,7 @@ There are 4 parameters,
 A running example:
 
 ```
-Rscript BIND_stat.R --data_mtx_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/stat"
+Rscript BIND_stat.R --data_mtx_dir "./files/data.csv" --grp_info_dir "./files/group_info.csv" --grp_name "Tissue" --output_dir "./files/outputfiles/stat"
 ```
 
 Output file:
@@ -71,7 +72,7 @@ The input file is same with BIND_stat. There are 7 parameters:
 A running example:
 
 ```
-RScript BIND_classification.R --data_mtx_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/class" --grp "Breast" --k 5 --th 5
+RScript BIND_classification.R --data_mtx_dir "./files/data.csv" --grp_info_dir "./files/group_info.csv" --grp_name "Tissue" --output_dir "./files/outputfiles/class" --grp "Breast" --k 5 --th 5
 ```
 
 Output file:
@@ -118,7 +119,7 @@ Becuse calculating all protein pairs in the data matrix is too time-consuming, w
 A running example:
 
 ```
-RScript BIND_ppi.R --data_mtx_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv"  --grp_name "Tissue"  --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/ppi"  --reward 0.05 --penalty 0.05 --NAtype_mtx_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/class/aftercalssification_label.csv"  --protein_list_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/testpros.csv"
+RScript BIND_ppi.R --data_mtx_dir "./files/data.csv" --grp_info_dir "./files/group_info.csv"  --grp_name "Tissue"  --output_dir "./files/ppi"  --reward 0.05 --penalty 0.05 --NAtype_mtx_dir "./files/outputfiles/class/aftercalssification_label.csv"  --protein_list_dir "./files/testpros.csv"
 ```
 
 If --grp has been defined, the output are:
