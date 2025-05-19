@@ -4,7 +4,7 @@ BIND provides a useful tool for analyzing missing values(NAs) in a biological pe
 
 It consists of 3 part, BIND_stat(A), BIND_classification(B), and BIND_ppi(C). This folder contains the command line run scripts for the three parts of BIND, and the source code is available to the user. In addition, this document describes how to run BIND from the command line.
 
-The file folder holds the example data and the results of running the example data. In addition, the format requirements for the input file are provided at the end of this document.
+The ***files*** folder holds the example data and the results of running the example data. In addition, the format requirements for the input file are provided at the end of this document.
 
 ## BIND_stat 📊
 
