@@ -109,7 +109,7 @@ There are 9 parameters:
 
 ---
 
-**9606protein_physical_v12.txt** is a provided human PPI database, which is used in this script, it should be put at same path of BIND_ppi.R.
+**9606protein_physical_v12.txt** is a provided human PPI database, which is used in this script, it should be put at same path of BIND_ppi.R. If the file is a 7z compressed file, unzip it and save the txt file in the appropriate location.
 
 User can specify a target group by using --grp, and get a group-specific BIND ppi. If --grp is not defined, BIND_ppi will cauculate based on the full data matrix.
 
