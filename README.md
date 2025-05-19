@@ -1,5 +1,4 @@
-# Biological informative NA deconvolution (BIND)
-
+# Biological informative NA deconvolution (BIND) <img src="bindlogo.svg" width="100">
 ## Brief introduction
 
 BIND is a bioinformatics tool for comprehensive analysis of missing value patterns in large-scale proteomics data.
