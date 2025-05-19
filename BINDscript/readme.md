@@ -1,12 +1,13 @@
-# BIND
+# BIND script
 
 BIND provides a useful tool for analyzing missing values(NAs) in a biological perspective.
 
-It consists of 3 part, BIND_stat(A), BIND_classification(B), and BIND_ppi(C). The first one is BIND_stat, which works as a general statistical analysis of missing values in a proteomic dataset.
+It consists of 3 part, BIND_stat(A), BIND_classification(B), and BIND_ppi(C). This folder contains the command line run scripts for the three parts of BIND, and the source code is available to the user. In addition, this document describes how to run BIND from the command line.
 
-<img src="./figure1.png" width="400px">
 
-## BIND_stat
+## BIND_stat 📊
+
+The first part is BIND_stat, which works as a general statistical analysis of missing values in a proteomic dataset.
 
 The input data are 2: expression matrix and group information.
 There are 4 parameters,
@@ -25,7 +26,7 @@ There are 4 parameters,
 A running example:
 
 ```
-Rscript BIND_stat.R --data_mtx_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/stat"
+Rscript BIND_stat.R --data_mtx_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/data.csv" --grp_info_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/group_info.csv" --grp_name "Tissue" --output_dir "E:/EV_ML/raw_data/Batch_PPI/RDATA/Webserver/files/stat"
 ```
 
 Output file:
@@ -44,7 +45,7 @@ Output file:
 
 **img_binary_tree.newick** tree file for creating a clustering tree of binary_mtx (see image description)
 
-## BIND_classification
+## BIND_classification 🏷️
 
 BIND_classification provides an agrithom for classfying "biological" and "technical" NAs.
 The input file is same with BIND_stat. There are 7 parameters:
@@ -81,7 +82,7 @@ Output file:
 
 **aftercalssification_groupmarkers.csv**: group specific markers found by BIND, for user download and creating a heatmap.
 
-## BIND_ppi
+## BIND_ppi 🖇️
 
 BIND_ppi weighted the Spearman correlation analysis, by concerning NA in calculation. 
 
@@ -131,3 +132,48 @@ If --grp has not been defined, the output are:
 **BINDppi_withoutgroup.csv**: Spearman rho(raw_raw in file), BIND_rho(weighted_rho in file) of full matrix.
 
 **BINDppi_withoutgroup_filtered.csv**: After filtered by restricted conditions, it shows specific ppi found by BIND compared with Spearman rho. 
+
+## <font color= #871F78>Data format</font> 📝
+
+
+***Expression Matrix*** with missing values:
+
+|          | Sample1 | Sample2 | Sample3 | Sample4| ... |
+| ---      | ---     | ---     | ---     | ---    | --- |
+| Protein1 | 5.5     | NA      | 3.2     | 7.6    | ... |
+| Protein2 | NA      | NA      | 3.1     | 8.5    | ... |
+| Protein3 | NA      | 2.0     | 4.3     | NA     | ... |
+| Protein4 | 3.2     | 9.0     | NA      | NA     | ... |
+| ...      | ...     |  ...    | ...     | ...    | ... |
+
+---
+Tips:
+
+* Columns are samples and rows are proteins.
+* The sample names and protein names should not contain special characters, like: . , - —— [ { ( etc. Underline _ is acceptable where it is unavoidable.
+* The sample names and protein names should start with an alphabet, such as A549, HeLa, HCT116... and EGFR, CXCR4, ...
+* Official gene symbol is strongly recommended. In any case, we recommend that users pre-convert the protein name to official gene symbols if they are not.
+* Protein expression values should be log converted.
+* The total size limit of uploaded files is 50MB.
+---
+
+***Group Information*** of samples:
+
+| Sample  | Grouptype1 | Grouptype2 | ... |
+| ---     | ---        | ---        | --- |
+| Sample1 | lung       | cancer     | ... |
+| Sample2 | lung       | normal     | ... |
+| Sample3 | stomach    | normal     | ... |
+| Sample4 | skin       | cancer     | ... |
+| ...     | ...        | ...        | ... |
+
+---
+Tips:
+
+* Sample names should be in the first column, the order is recommended to match with column names in the expression matrix.
+* There may be multiple columns to indicate multiple kinds of grouping, while each column should have a unique and easily distinguishable name.
+* Each data in this table also should meet the requirements of the sample name.
+---
+
+
+If the status is Failed, please check if the uploaded files meet the requirement. If you confirm that there is no problem with the uploaded file, please contact us.
